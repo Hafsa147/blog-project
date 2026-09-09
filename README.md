@@ -21,14 +21,6 @@ A Python command-line tool that generates blog-style paragraphs from user-provid
 - **Low temperature (0.3)**: intentionally set low rather than high. For a blog generator, more consistent and on-topic output is preferable to highly random, unpredictable variations between runs — this keeps generated paragraphs coherent and focused on the given topic.
 - **Simple loop-based CLI**: rather than a one-shot script, the program keeps prompting the user in a loop so multiple paragraphs can be generated in a single session without restarting the program.
 
-## What I'd improve with more time
-
-- Add input validation so an empty or accidental topic doesn't get sent to the API
-- Add error handling around the API call itself (e.g. network failures, rate limits, invalid API key) rather than letting the program crash
-- Let the user generate a full multi-paragraph blog post (with a title and structure) instead of a single paragraph at a time
-- Move the hardcoded prompt template into a separate, editable location so tone/style can be adjusted without changing code
-- Migrate off `gpt-3.5-turbo-instruct` (a legacy completion-style model) to a current chat-based model for better output quality
-
 ## Setup
 
 1. Install dependencies:
