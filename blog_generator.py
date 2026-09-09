@@ -6,9 +6,11 @@ config = dotenv_values(".env")
 openai.api_key = config['API_KEY']
 
 def generate_blog(paragraph_topic):
-    response = openai.completions.create( model = 'gpt-3.5-turbo-instruct',
+    response = openai.completions.create( 
+        model = 'gpt-3.5-turbo-instruct',
         prompt = 'Write a paragraph on the following topic. ' + paragraph_topic, 
         max_tokens=400, 
+        #temperature make it so every output is consistent and focused
         temperature=0.3
     )
     retrieve_blog = response.choices[0].text
